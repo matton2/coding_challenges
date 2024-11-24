@@ -1,4 +1,3 @@
-import { create } from "domain";
 import { readFile } from "../utilities.js";
 
 const example = readFile('/2023/day03/example.txt')
@@ -43,8 +42,9 @@ function solve1(input) {
     })
     return(total)
 }
-//console.log('example:',solve1(example))
-//console.log(solve1(input))
+
+console.log('example:',solve1(example))
+console.log(solve1(input))
 
 function solve2(input) {
     let total = 0
