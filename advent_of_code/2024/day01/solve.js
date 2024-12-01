@@ -25,8 +25,8 @@ function solve1(input) {
     return(final)
 }
 
-//console.log(solve1(example))
-//console.log(solve1(input))
+console.log(solve1(example))
+console.log(solve1(input))
 
 function solve2(input) {
 
@@ -42,7 +42,7 @@ function solve2(input) {
     leftside.sort()
     rightside.sort()
 
-    let distances = leftside.map((left, index) => {
+    let distances = leftside.map((left) => {
 
         let matches = rightside.filter(el => el === left).length
 
