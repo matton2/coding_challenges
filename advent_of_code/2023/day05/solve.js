@@ -1,4 +1,4 @@
-import { readFile } from "../utilities.js";
+import { readFile } from "../../../utilities.js";
 
 const example = readFile('/2023/day05/example.txt')
 const input = readFile('/2023/day05/input.txt')
