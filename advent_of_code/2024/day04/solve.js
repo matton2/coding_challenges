@@ -69,8 +69,8 @@ function solve1(input) {
 
 }
 
-//console.log(solve1(example))
-//console.log(solve1(input))
+console.log('example solve1:', solve1(example))
+console.log('input solve1:', solve1(input))
 
 function solve2(input) {
     let totalCount = 0
@@ -101,5 +101,5 @@ function solve2(input) {
 
 }
 
-console.log(solve2(example))
-console.log(solve2(input))
+console.log('example solve2:', solve2(example))
+console.log('input solve2:', solve2(input))
