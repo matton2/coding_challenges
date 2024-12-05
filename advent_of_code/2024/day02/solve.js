@@ -26,8 +26,8 @@ function solve1(input) {
     return safe
 }
 
-console.log('example:', solve1(example))
-console.log('input:', solve1(input))
+//console.log('example:', solve1(example))
+//console.log('input:', solve1(input))
 
 function checkingSafeness(levels) {
     let setTheTone = levels[0]-levels[1] > 0?'desc':'asc'
@@ -61,8 +61,6 @@ function solve2(input) {
                 if(tryAgain === -1) {
                     safe+=1
                 }
-            
-            
         }
     })
     return safe
