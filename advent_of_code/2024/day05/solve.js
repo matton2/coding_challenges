@@ -28,6 +28,7 @@ function checkTheLine(line, beforeRule, afterRule) {
             let prePrintIndexes = beforeRule.map((el, i) => el === page ? i : '').filter(Number)
             // i will then need to figure out what pages need to be printed 
             let afterPrints = prePrintIndexes.map(index => afterRule[index])
+            // this will remove any pages after this index so i only deal with prev printed pages
             let pagesBefore = array.slice(0, index)
             // if the pages before contains an after print, it is wrong
             if(pagesBefore.some(page => afterPrints.includes(page))) {
