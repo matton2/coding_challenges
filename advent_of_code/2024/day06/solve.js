@@ -1,6 +1,7 @@
 import { readFile } from "../../../utilities.js";
 
-const example = readFile('/advent_of_code/2024/day06/example.txt').map(el => el.split(""))
+const example1 = readFile('/advent_of_code/2024/day06/example.txt').map(el => el.split(""))
+const example2 = readFile('/advent_of_code/2024/day06/example.txt').map(el => el.split(""))
 const input = readFile('/advent_of_code/2024/day06/input.txt').map(el => el.split(""))
 
 function solve1(input) {
@@ -62,46 +63,35 @@ function solve1(input) {
         })
     })
     
-    return(totalSpots)
+    return([totalSpots, input])
 
 }
 
-//console.log('Example:', solve1(example))
-//console.log('Example:', solve1(input))
+console.log('Example:', solve1(example1))
+//console.log('Example:', solve1(input[0]))
 
 
 function solve2(input) {
 
     // inorder to create a loop i must have a # in row x, column y, a # in row x-1, 
     let totalObstacles = 0
-
     input.forEach((line, row) => {
-        line.forEach((space, column) => {
-            if(space === "#") {
-                //does a spot down and to the right have a #
-                console.log('found our first x')
-                let rowDown = input[row+1].slice(column).findIndex(el => el === '#')
-                if(rowDown !== -1) {
-                    console.log('found out second x')
-                    let actualRow = rowDown + column
-                    let belowLines = input.slice(row+1) 
-                    belowLines.forEach((bottomLine) => {
-                        if(bottomLine[actualRow] === '#') {
-                            console.log('found our 3rd')
-                            totalObstacles += 1
-                            console.log(totalObstacles)
-                        }
-                    })
-                } 
-                
+        line.forEach((cell, column) => {
+            if(cell === 'X') {
+                let tempInput = input
+            tempInput[row][column] = '#' 
+            console.log(solve1(tempInput))
+
             }
+            
         })
     })
-
 
     return totalObstacles
 
 }
+    
 
-console.log('Example:', solve2(example))
+
+console.log('Example:', solve2(solve1(example2)[1]))
 //console.log('Example:', solve2(input))
