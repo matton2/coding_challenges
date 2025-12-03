@@ -22,8 +22,6 @@ const figureOutRepeatsPart1 = (range) => {
     })
     ///console.log(included)
     return(included.reduce((acc, curr) => acc + curr, 0))
-
-    
 }
 
 function solve1(input) {
