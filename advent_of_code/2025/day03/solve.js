@@ -18,7 +18,7 @@ const findBiggestNumber = (batteries, length) => {
     return (Number(turnedOn.join('')))
 }
 
-function solve1Better(input) {
+function solve1(input) {
     const maxVolts = []
     input.forEach(bank => {
         let batteries = bank.split('').map(Number)
@@ -28,8 +28,8 @@ function solve1Better(input) {
     return maxVolts.reduce((acc, curr) => acc + curr, 0)
 }
 
-console.log('Example Solve1: ', solve1Better(example))
-console.log('Input Solve1: ', solve1Better(input))
+console.log('Example Solve1: ', solve1(example))
+console.log('Input Solve1: ', solve1(input))
 
 function solve2(input) {
     const maxVolts = []
@@ -42,5 +42,8 @@ function solve2(input) {
 }
 
 console.log('Example Solve2: ', solve2(example))
+let startSolve2 = performance.now();
 console.log('Input Solve2: ', solve2(input))
+let endSolve2 = performance.now();
+console.log(`Solve 2 Execution time: ${endSolve2 - startSolve2} milliseconds`);
 
