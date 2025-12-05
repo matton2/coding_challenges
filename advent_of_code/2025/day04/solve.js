@@ -37,7 +37,7 @@ function solve2(input) {
                 let totalRolls = col === '@' ? lookAroundAndCount(currentInput, r, c, true, '@'):5
                 if (totalRolls < 4) {
                     totalCount +=1
-                    // the update updated row apart
+                    // pull the update updated row apart
                     let updatedRow = updatedInput[r].split('')
                     // switch the @ to a .
                     updatedRow[c] = '.'
